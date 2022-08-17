@@ -2,10 +2,12 @@ import './App.css';
 import {
   HashRouter,
   NavLink,
+  Routes,
+  Route,
 } from 'react-router-dom';
 
 const Todo = () => {
-  return <p>這是 Todo 頁面 
+  return <p>這是 Todo 頁面
   </p>;
 };
 const Login = () => {
@@ -34,9 +36,16 @@ function App() {
           </NavLink>
         </div>
         {/* Routes, Route 練習區 */}
+        <Routes>
+          <Route path="/" element={<p>回到首頁</p>} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/todo" element={<Todo />} />
+          <Route path='*' element={<main style={{ padding: "1rem" }}><p>ＮＯ網頁</p></main>} />
+        </Routes>
         {/* 練習區 */}
       </HashRouter>
-    </div>
+    </div >
   );
 }
 
